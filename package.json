@@ -1,0 +1,29 @@
+{
+  "name": "dead-signal-afterlight",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"tsx watch server/index.ts\" \"vite --host 0.0.0.0\"",
+    "build": "tsc --noEmit && vite build && tsc -p tsconfig.server.json",
+    "start": "node dist-server/server/index.js",
+    "test": "tsx --test tests/*.test.ts",
+    "test:browser": "python3 scripts/browser-tests.py"
+  },
+  "dependencies": {
+    "three": "0.180.0",
+    "ws": "8.18.3",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.0",
+    "@types/node": "24.7.2",
+    "@types/three": "0.180.0",
+    "@types/ws": "8.18.1",
+    "concurrently": "9.2.1",
+    "prettier": "3.6.2",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite": "7.1.9"
+  }
+}
